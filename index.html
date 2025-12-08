@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nimrat Kaur – Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a1f2e;
+      --accent: #d4a574;
+      --accent-soft: rgba(212, 165, 116, 0.18);
+      --text-main: #f5f4f2;
+      --text-muted: #b8b5b0;
+      --border-subtle: #2a2f3a;
+      --radius-lg: 14px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2535 0, #0a0d12 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      font-size: 14px;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      background: transparent;
+      transition: 0.18s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      border-color: var(--accent-soft);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      padding: 22px 22px 24px;
+      border-radius: 22px;
+      background: radial-gradient(circle at top left, #252b3a 0, #0f1419 55%);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(212, 165, 116, 0.9);
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 34px);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      max-width: 560px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 9px 16px;
+      font-size: 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d4a574, #c8966a);
+      color: #1b1207;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-0.5px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #555b73;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .headshot {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 165, 116, 0.15);
+      border: 2px solid rgba(212, 165, 116, 0.2);
+      margin: 0 auto;
+      object-fit: cover;
+      aspect-ratio: 1;
+      filter: brightness(1.02) contrast(1.05);
+      transition: all 0.3s ease;
+    }
+
+    .headshot:hover {
+      border-color: rgba(212, 165, 116, 0.35);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 165, 116, 0.25);
+    }
+
+    .mini-card {
+      padding: 14px 14px 13px;
+      border-radius: 16px;
+      background: rgba(10, 14, 32, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .mini-card h3 {
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      background: rgba(16, 22, 45, 0.96);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    section {
+      padding: 18px 18px 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(7, 10, 23, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65);
+    }
+
+    section h2 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    section h2 span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .section-body {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .skills-grid span {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(19, 25, 52, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 12px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .project-card {
+      padding: 12px 12px 11px;
+      border-radius: 12px;
+      background: linear-gradient(
+        135deg,
+        rgba(212, 165, 116, 0.12),
+        rgba(9, 12, 26, 0.95)
+      );
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .project-card h3 {
+      font-size: 14px;
+    }
+
+    .project-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .project-tags span {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(8, 11, 24, 0.92);
+    }
+
+    .project-links {
+      margin-top: 10px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(212, 165, 116, 0.12);
+      border: 1px solid rgba(212, 165, 116, 0.25);
+      color: var(--text-main);
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      background: rgba(212, 165, 116, 0.2);
+      border-color: rgba(212, 165, 116, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.2);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 800px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(212, 165, 116, 0.1);
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .contact-btn:hover {
+      background: rgba(212, 165, 116, 0.18);
+      border-color: rgba(212, 165, 116, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212, 165, 116, 0.25);
+    }
+
+    .contact-btn strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .location-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: var(--radius-lg);
+      background: rgba(10, 14, 32, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      margin-top: 12px;
+      color: var(--text-main);
+    }
+
+    .location-card::before {
+      content: "📍";
+      font-size: 16px;
+    }
+
+    .location-card strong {
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 11px;
+      text-align: center;
+      color: var(--text-muted);
+      opacity: 0.85;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+    }
+
+    .section-anchor {
+      scroll-margin-top: 80px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">NIMRAT KAUR</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-main">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Data Analyst · Calgary, AB
+        </div>
+        <h1>Turning data into <span>clear, simple decisions.</span></h1>
+        <p class="hero-sub">
+          I’m Nimrat, a Calgary-based data analyst transitioning from an accounting background.
+          I work with SQL, Tableau, Excel, and Python to answer real business
+          questions and tell the story behind the numbers.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="resume.pdf" download="resume.pdf" class="btn-primary">View Resume</a>
+          <a href="#contact" class="btn-ghost">Get in touch</a>
+        </div>
+
+        <!-- <div class="hero-meta">
+          <span><strong>Focus:</strong> Data Analytics & BI</span>
+          <span class="dot"></span>
+          <span>Comfortable with stakeholders & deadlines</span>
+        </div> -->
+      </div>
+
+      <div class="hero-side">
+        <img src="headshot.png" alt="Nimrat Kaur" class="headshot" />
+        <div class="mini-card">
+          <h3>Quick snapshot</h3>
+          <p>
+            Several years in accounting firms, now focused on analytics projects
+            that support decision-making, improve performance, and answer
+            concrete business questions.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Core toolkit</h3>
+          <div class="tag-row">
+            <span class="tag">SQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Excel</span>
+            <span class="tag">PowerPoint</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- ABOUT -->
+      <section id="about" class="section-anchor">
+        <h2>About me <span class="pill">Background & goals</span></h2>
+        <div class="section-body">
+          <p>
+            I started my career as an accounting technician in CPA firms, where
+            I worked with financial data, tight deadlines, and busy seasons.
+            Over time, I realised that what I enjoyed most was understanding the
+            “why” behind the numbers and using data to guide decisions.
+          </p>
+          <p style="margin-top: 6px">
+            Now I’m focused on data analytics. I enjoy cleaning messy datasets,
+            writing SQL queries, building clear visualisations, and presenting
+            insights in simple language for non-technical stakeholders.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section-anchor">
+        <h2>Selected projects <span class="pill">Noteworthy Projects</span></h2>
+        <div class="section-body">
+          <div class="projects-grid">
+            <!-- Rockbuster -->
+            <article class="project-card">
+              <h3>Rockbuster Stealth – Streaming Launch Strategy</h3>
+              <p class="project-meta">
+                Identifying target countries, customer segments, and content
+                strategy for a global movie rental company launching an online
+                service.
+              </p>
+              <div class="project-tags">
+                <span>SQL</span>
+                <span>PostgreSQL</span>
+                <span>Tableau</span>
+                <span>Customer segmentation</span>
+              </div>
+              <div class="project-links">
+                <!-- Replace # with your real links when ready -->
+                <a href="rock_pdf.pdf" target="_blank">View case study (PDF)</a>
+                <a href="rock_ppt.pptx" target="_blank">View Powerpoint presentation</a>
+              </div>
+            </article>
+
+            <!-- GameCo -->
+            <article class="project-card">
+              <h3>Instacart – Grocery Basket Analysis</h3>
+              <p class="project-meta">
+                Analyzed customer purchase behaviour to identify patterns and trends to support targetted marketing strategies.
+              </p>
+              <div class="project-tags">
+                <span>Excel</span>
+                <span>Pyhton</span>
+                <span>Jupiter Notebook</span>
+              </div>
+              <div class="project-links">
+                <a href="insta_sheet.xlsx" target="_blank">View Excel sheet</a>
+              </div>
+            </article>
+
+            <!-- Influenza Staffing -->
+            <!-- <article class="project-card">
+              <h3>Influenza Season – Hospital Staffing Dashboard</h3>
+              <p class="project-meta">
+                Built a dashboard to help hospital leaders plan staffing for
+                flu season by analysing admissions, bed usage, and peak days.
+              </p>
+              <div class="project-tags">
+                <span>Tableau</span>
+                <span>Time series</span>
+                <span>Capacity planning</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank">Interactive Tableau dashboard</a>
+              </div>
+            </article> -->
+
+            <!-- SQL Cleaning -->
+            <!-- <article class="project-card">
+              <h3>Data Cleaning with SQL</h3>
+              <p class="project-meta">
+                Cleaned and transformed a raw dataset to prepare it for analysis
+                using SQL, focusing on missing values, duplicates, and
+                inconsistent formats.
+              </p>
+              <div class="project-tags">
+                <span>SQL</span>
+                <span>Data cleaning</span>
+                <span>ETL basics</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank">View SQL script (GitHub)</a>
+              </div>
+            </article> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS + RESUME -->
+      <section id="skills" class="section-anchor">
+        <h2>Skills & tools <span class="pill">What I work with</span></h2>
+        <div class="section-body two-col">
+          <div>
+            <p><strong>Technical skills</strong></p>
+            <div class="skills-grid">
+              <span>PostgreSQL / MySQL</span>
+              <span>Tableau (dashboards & stories)</span>
+              <span>Excel (pivot tables, formulas)</span>
+              <span>PowerPoint</span>
+              <span>Basic Python for analysis</span>
+              <span>Quickbooks</span>
+              <span>Sage 50</span>
+              <span>Caseware</span>
+            </div>
+
+            <p style="margin-top: 10px"><strong>Analytics skills</strong></p>
+            <div class="skills-grid">
+              <span>Data cleaning & preparation</span>
+              <span>Exploratory data analysis</span>
+              <span>Descriptive statistics</span>
+              <span>Visual storytelling</span>
+              <span>Stakeholder communication</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section-anchor">
+        <h2>Contact <span class="pill">Let’s talk</span></h2>
+        <div class="section-body">
+          <p>
+            I help teams make data-driven decisions by transforming raw data into
+            clear insights and actionable recommendations. If you're looking for
+            someone who combines analytical rigor with strong communication skills
+            and a proven track record of delivering results, let's connect.
+          </p>
+          <div class="contact-buttons">
+            <a href="mailto:kaur.nimrat2023@gmail.com" class="contact-btn">
+              <strong>Email</strong>
+              <span>kaur.nimrat2023@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nimratpal-randhawa-93968149/" target="_blank" class="contact-btn">
+              <strong>LinkedIn</strong>
+              <span>Connect with me</span>
+            </a>
+            <div class="location-card">
+              <strong>Location</strong>
+              <span>Calgary, Alberta, Canada</span>
+            </div>
+          </div>
+          <p class="muted">
+            Always interested in connecting with fellow data professionals,
+            exploring new opportunities, or discussing how data analytics can
+            solve your business challenges.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Nimrat Kaur · Built with GitHub Pages
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </div>
+</body>
+</html>
