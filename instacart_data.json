@@ -1,0 +1,105 @@
+{
+  "project": {
+    "title": "Customer Behavior Analysis & Market Insights",
+    "subtitle": "Customer behavior insights from millions of grocery orders",
+
+    "problem": {
+      "what": "Instacart has millions of orders, but raw data alone doesn’t explain customer behavior or where marketing efforts should focus.",
+      "why": "The goal was to turn large-scale order data into clear insights that could support smarter promotions, customer targeting, and operational planning.",
+      "solution": "I explored shopping patterns, spending behavior, demographics, and regional differences, then summarized the findings into actionable insights supported by visualizations."
+    },
+
+    "keyQuestions": [
+      "What are the busiest days of the week and hours of the day?",
+      "At what times do customers spend the most money?",
+      "Are there differences in ordering habits based on a customer's region?",
+      "Is there a connection between age and income?",
+      "Who are Instacart's most valuable customers?",
+      "How does customer income vary across U.S. regions, and how can this inform marketing strategy?"
+    ],
+
+    "keyInsights": [
+      "Sundays and Mondays are the busiest days, with peak activity between 9am and 5pm.",
+      "Spending is highest around midday, which is a strong window for premium promotions.",
+      "Middle-aged customers (45–70) are the most valuable segment based on order frequency.",
+      "Older customers generally show higher income levels than younger adults.",
+      "Regional differences suggest marketing and product strategies should be localized."
+    ],
+
+    "visualizations": [
+      {
+        "title": "Peak Grocery Shopping Hours",
+        "description": "Customer order volume by hour of day, highlighting peak shopping periods",
+        "image": "assets/insta_1.png",
+        "insight": "Customer activity concentrates between late morning and early evening, indicating the strongest opportunity window for promotions and operational readiness."
+      },
+      {
+        "title": "Busiest Days of the Week for Grocery Orders",
+        "description": "Comparison of total order volume across weekdays",
+        "image": "assets/insta_2.png",
+        "insight": "Order volume peaks on Sundays and Mondays, suggesting these days drive the majority of weekly demand and should be prioritized for marketing campaigns."
+      },
+      {
+        "title": "Order Volume by Day of the Week",
+        "description": "Daily distribution of grocery orders, showing demand patterns across the week",
+        "image": "assets/insta_3.png",
+        "insight": "Mid-week demand drops noticeably compared to weekends, highlighting an opportunity for targeted incentives to balance order volume."
+      },
+      {
+        "title": "Age vs. Number of Dependents",
+        "description": "Examining whether family size varies across different age groups",
+        "image": "assets/insta_4.png",
+        "insight": "The number of dependents remains relatively stable across age groups, indicating family size is not a primary driver of purchasing differences."
+      },
+      {
+        "title": "Customer Distribution by Age Group",
+        "description": "Breakdown of Instacart customers by major age segments",
+        "image": "assets/insta_5.png",
+        "insight": "Middle-aged adults represent the largest customer segment, making them the most impactful group for retention and loyalty initiatives."
+      },
+      {
+        "title": "Relationship between Age and Income",
+        "description": "Visualizing income distribution across customer age ranges",
+        "image": "assets/insta_6.png",
+        "insight": "Higher income levels are more common among older customers, supporting differentiated pricing and premium product strategies by age segment."
+      },
+      {
+        "title": "Customer Spending Behavior by Region",
+        "description": "Comparison of high- and low-spending customer segments across U.S. regions",
+        "image": "https://github.com/user-attachments/assets/09f78cca-5927-429e-94eb-d192657f6a6c",
+        "insight": "The South shows the highest concentration of low-spending customers by volume, while the Midwest and West display a relatively stronger presence of high-spending customers. This suggests regional strategies should balance volume-driven growth in the South with premium and high-value offerings in higher-income regions."
+      }
+    ],
+
+    "soWhat": "These insights enable smarter promotion timing, targeted customer segmentation, and better demand planning. By aligning marketing and operations with real customer behavior, Instacart can increase conversion, reduce inefficiencies, and focus investment on the highest-value customer segments.",
+
+    "recommendations": [
+      "Focus major promotions on Sundays and Mondays; use targeted offers mid-week to lift engagement.",
+      "Run premium product ads during midday when spending peaks.",
+      "Build retention with loyalty rewards and personalized discounts for repeat customers.",
+      "Tailor regional strategies: premium focus in higher-income regions, value-focused messaging in high-spend regions.",
+      "Plan staffing/delivery capacity around peak demand periods to reduce delays."
+    ],
+
+    "skillsShowcased": [
+      "Exploratory Data Analysis (EDA)",
+      "Data Cleaning & Preparation",
+      "Data Visualization & Storytelling",
+      "Customer Segmentation",
+      "Business Recommendations"
+    ],
+
+    "tools": [
+      "Python (pandas, NumPy)",
+      "Matplotlib",
+      "Seaborn",
+      "Jupyter Notebook",
+      "Excel"
+    ],
+
+    "cta": {
+      "label": "View full case study",
+      "description": "Explore the full workflow, code, and insights behind these visualizations."
+    }
+  }
+}

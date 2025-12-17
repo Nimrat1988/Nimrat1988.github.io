@@ -1,0 +1,69 @@
+{
+  "project": {
+    "title": "Revenue Analysis & Strategic Planning",
+    "subtitle": "SQL + Tableau analysis to support a streaming transition strategy",
+
+    "problem": {
+      "what": "Rockbuster Stealth LLC needed to transition from physical movie rentals to an online streaming model to compete with modern platforms.",
+      "why": "Leadership required data-backed answers to guide the 2020 launch strategy—what content drives revenue, where high-value customers are located, and how performance varies by region.",
+      "solution": "I loaded Rockbuster’s data into PostgreSQL and used SQL to analyze revenue, rentals, and customer value. Results were summarized with Tableau visuals and clear business recommendations."
+    },
+
+    "keyQuestions": [
+      "Which movies contributed the most and least to revenue?",
+      "What is the average rental duration for all videos?",
+      "Which countries are Rockbuster customers based in?",
+      "Where are customers with a high lifetime value based?",
+      "Do sales figures vary across geographic regions?"
+    ],
+
+    "visualizations": [
+      {
+        "title": "Revenue by Rating",
+        "subtitle": "Shows how film ratings perform financially to support promotion and merchandising decisions",
+        "image": "https://github.com/user-attachments/assets/e701c5ce-33c3-4606-9024-52d17fdafa4c",
+        "insight": "PG-13 generates the highest revenue, while G-rated movies earn the least."
+      },
+      {
+        "title": "Revenue by Genre",
+        "subtitle": "Identifies the highest and lowest earning content categories to guide catalog strategy",
+        "image": "https://github.com/user-attachments/assets/75f0ee8a-7a35-4ce4-b8ad-1280a296a6e0",
+        "insight": "Sports, Sci-Fi, and Animation are the top-earning genres, while Music, Travel, and Children generate the least revenue."
+      },
+      {
+        "title": "Revenue by Country",
+        "subtitle": "Highlights which countries drive the strongest customer value and revenue contribution",
+        "image": "https://github.com/user-attachments/assets/058a50e3-2b2b-4c60-a4db-1199d62fbfaa",
+        "insight": "India, China, the United States, Japan, and Mexico contribute the highest customer lifetime value."
+      } 
+    ],
+
+    "keyInsights": [
+      "PG-13 movies generate the highest total revenue, while G-rated movies generate the least.",
+      "Average rental duration is 5 days, with an average rental rate of $2.98 and average film length of 115 minutes.",
+      "India, China, the U.S., Japan, and Mexico represent the strongest customer lifetime value regions.",
+      "Sports, Sci-Fi, and Animation drive the most revenue; Music, Travel, and Children underperform."
+    ],
+
+    "recommendations": [
+      "Prioritize PG-13 titles and promote other top-performing ratings to maintain a balanced catalog.",
+      "Align pricing and rental length decisions around the 5-day average customer preference.",
+      "Expand and market Sports, Sci-Fi, and Animation; use bundles/curated collections to lift weaker genres.",
+      "Focus digital growth and marketing in India, China, and the U.S. where customer value is highest.",
+      "Improve personalization and test pricing strategies to strengthen streaming conversion and retention."
+    ],
+
+    "soWhat": "This analysis helps Rockbuster make a smarter streaming transition by focusing investment on the genres, ratings, and regions that drive the most revenue and customer value—supporting stronger targeting, better catalog planning, and more confident go-to-market decisions.",
+
+    "tools": [
+      "SQL (PostgreSQL)",
+      "Tableau"
+    ],
+
+    "cta": {
+      "label": "View full case study",
+      "description": "Explore the SQL analysis process, key visuals, and business recommendations."
+    }
+  }
+}
+

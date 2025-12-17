@@ -1,0 +1,85 @@
+{
+  "project": {
+    "title": "Demand Forecasting & Workplace Planning",
+    "subtitle": "Using flu trends to plan temporary healthcare staffing",
+
+    "problem": {
+      "what": "A medical staffing agency needs to prepare for seasonal spikes in demand caused by influenza.",
+      "why": "Without data-driven planning, agencies risk understaffing during peak months and in high-impact regions—leading to delayed care and increased healthcare strain.",
+      "solution": "I analyzed national flu-death trends and population data to identify where and when staffing demand rises, and which patient groups are most at risk, then summarized results in a Tableau dashboard for stakeholders."
+    },
+
+    "objective": "Support staffing planning for influenza season by identifying peak periods, high-need states, and vulnerable populations.",
+
+    "keyQuestions": [
+      "Which states experience the highest demand for additional medical staff?",
+      "Which population groups are most affected and at highest risk during flu season?",
+      "When does flu season peak, and how long does the high-demand period typically last?"
+    ],
+
+    "dataSources": [
+      {
+        "name": "CDC",
+        "description": "Influenza deaths by geography"
+      },
+      {
+        "name": "U.S. Census Bureau",
+        "description": "Population by geography, time, age, and gender"
+      }
+    ],
+
+    "method": [
+      "Cleaned and standardized both datasets (types, missing values, consistency checks).",
+      "Performed hypothesis testing to evaluate the relationship between 65+ population and flu-related deaths by state.",
+      "Built Tableau visuals (trends, forecasts, maps) and a stakeholder-ready storyboard."
+    ],
+
+    "visualizations": [
+      {
+        "title": "People Most at Risk During Flu Season",
+        "subtitle": "Flu-related deaths by age group (2009–2017)",
+        "image": "assets/influenza_1.png",
+        "insight": "Flu deaths rise sharply with age, making 65+ the highest-risk group and the top priority for staffing and prevention planning."
+      },
+      {
+        "title": "Flu Activity by Month",
+        "subtitle": "Seasonal trend in flu deaths across years (2009–2017)",
+        "image": "assets/influenza_2.png",
+        "insight": "Flu impact is strongly seasonal, with the highest demand in winter—especially from December to February—supporting early staffing ramp-up before the peak."
+      },
+      {
+        "title": "Where High-Risk Flu Impact Is Concentrated",
+        "subtitle": "State-level flu deaths with emphasis on the 65+ population (2009–2017)",
+        "image": "assets/influenza_3.png",
+        "insight": "High flu-death states overlap with large senior populations, indicating where staffing support is most critical—especially in high-need states like California and New York."
+      } 
+    ],
+
+    "keyInsights": [
+      "Adults aged 65+ face the highest risk of severe illness and death during flu season.",
+      "California and New York show the highest influenza deaths, indicating higher staffing needs.",
+      "Flu activity peaks in winter, especially from December to February.",
+      "High-need regions often overlap with large older populations and historically high flu impact."
+    ],
+
+    "recommendations": [
+      "Prioritize staffing and prevention programs focused on adults aged 65+.",
+      "Increase temporary staffing in consistently high-need states such as California and New York.",
+      "Begin staffing and resource planning early using historical trends to prepare for the December–February peak."
+    ],
+
+    "deliverable": {
+      "type": "Tableau Dashboard",
+      "label": "View interactive dashboard",
+      "url": "https://public.tableau.com/app/profile/nimrat.kaur2103/viz/PreparingforInfluenzaSeason_17613267279870/Preparingforinfluenzaseason?publish=yes"
+    },
+
+    "soWhat": "This analysis helps staffing agencies plan proactively—allocating healthcare workers to the right states and months, and focusing on high-risk populations—reducing peak-season strain and improving patient care outcomes.",
+
+    "tools": [
+      "Excel",
+      "Tableau"
+    ]
+  }
+}
+
