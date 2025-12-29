@@ -1,0 +1,144 @@
+{
+  "slug": "world-happiness-report",
+  "title": "World Happiness Report Analysis",
+  "tagline": "What drives happiness across countries? A data story using Tableau + Python.",
+  "links": {
+    "tableauDashboard": "https://public.tableau.com/app/profile/nimrat.kaur2103/viz/WorldHappinessReport_17670313651560/WorldHappinessReport?publish=yes"
+  },
+  "overview": {
+    "what": "Analyzed global happiness data (2005–2023) to understand how life satisfaction varies by country and what factors are most strongly linked to happiness.",
+    "why": "Organizations and governments want to improve well-being, but happiness is influenced by multiple economic and social factors — not just income.",
+    "soWhat": "The results suggest that policies combining economic stability with stronger social systems are more likely to improve happiness outcomes."
+  },
+  "keyQuestions": [
+    "How does happiness vary across countries and regions?",
+    "Which factors are most strongly associated with higher happiness?",
+    "Can countries be grouped into meaningful segments using clustering?",
+    "How can these insights support better policy decisions?"
+  ],
+  "methodology": [
+    {
+      "step": "Exploratory Data Analysis (EDA)",
+      "summary": "Mapped happiness globally and explored distributions and trends over time."
+    },
+    {
+      "step": "Regression Analysis",
+      "summary": "Tested relationships between happiness, GDP per capita, and social support."
+    },
+    {
+      "step": "Clustering (K-Means)",
+      "summary": "Grouped countries into segments based on happiness, GDP per capita, and social support."
+    }
+  ],
+  "tools": [
+    "Tableau Public",
+    "Python (Pandas, NumPy)",
+    "Matplotlib",
+    "Scikit-learn"
+  ],
+  "highlights": [
+    {
+      "title": "Happiness is strongly linked to social support",
+      "detail": "Countries with stronger social support systems tend to report higher happiness — even beyond income levels.",
+      "soWhat": "Investing in social systems can raise well-being outcomes alongside economic growth."
+    },
+    {
+      "title": "GDP matters, but it’s not the full story",
+      "detail": "Higher GDP per capita is generally associated with higher happiness, but it does not explain everything.",
+      "soWhat": "Economic growth alone may not meaningfully improve life satisfaction without social stability."
+    },
+    {
+      "title": "Three meaningful country clusters emerge",
+      "detail": "Clustering separates countries into low, mid, and high well-being segments based on happiness + GDP + social support.",
+      "soWhat": "These segments can guide targeted policy strategies rather than using one-size-fits-all solutions."
+    }
+  ],
+  "clusters": [
+    {
+      "name": "Cluster 1: Low GDP + Low Social Support",
+      "profile": "Lower happiness levels and weaker support systems.",
+      "soWhat": "Policy focus: foundational stability — jobs, safety nets, basic services."
+    },
+    {
+      "name": "Cluster 2: Moderate GDP + Moderate Social Support",
+      "profile": "Mid-range happiness with growth potential.",
+      "soWhat": "Policy focus: strengthen institutions and social support to lift well-being."
+    },
+    {
+      "name": "Cluster 3: High GDP + Strong Social Support",
+      "profile": "Highest happiness levels and strong social support.",
+      "soWhat": "Policy focus: maintain quality of life and address inequality/mental health."
+    }
+  ],
+  "visualizations": {
+    "title": "Visualizations",
+    "subtitle": "A mix of global views, relationships, and model-backed segmentation.",
+    "items": [
+      {
+        "title": "Global Happiness Heatmap",
+        "subtitle": "A country-level view of happiness scores across the world.",
+        "soWhat": "Quickly reveals high/low well-being regions and where to investigate deeper.",
+        "image": {
+          "alt": "heatmap_world_happiness_report",
+          "src": "https://github.com/user-attachments/assets/aebe55e3-2099-41e7-bbdf-ad1bd360436f"
+        }
+      },
+      {
+        "title": "Happiness vs GDP per Capita",
+        "subtitle": "How income relates to happiness across countries.",
+        "soWhat": "Shows that wealth generally helps — but it doesn’t fully explain happiness differences.",
+        "image": {
+          "alt": "scat2_world_happiness_report",
+          "src": "https://github.com/user-attachments/assets/999802d9-aa56-4c73-8291-e9cee4a85dff"
+        }
+      },
+      {
+        "title": "Happiness vs Social Support",
+        "subtitle": "Relationship between social support and life satisfaction.",
+        "soWhat": "Highlights social support as a consistently strong driver of happiness.",
+        "image": {
+          "alt": "scat3_world_happiness_report",
+          "src": "https://github.com/user-attachments/assets/4d57e54a-2f90-4c30-b9d0-89b0c5128358"
+        }
+      },
+      {
+        "title": "Country Segments (Clustering View)",
+        "subtitle": "Country groups based on happiness, GDP, and social support.",
+        "soWhat": "Useful for tailoring strategies by segment instead of treating all countries the same.",
+        "image": {
+          "alt": "scat5_world_happiness_report",
+          "src": "https://github.com/user-attachments/assets/e1f6c5c6-b3e9-41f1-a257-fd0b209a6c71"
+        }
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "Balance economic and social investments",
+      "detail": "Don’t rely only on GDP growth — strengthen social support systems too."
+    },
+    {
+      "title": "Use segmentation for targeted policy",
+      "detail": "Different clusters need different interventions (basic stability vs. quality-of-life improvements)."
+    },
+    {
+      "title": "Focus on holistic well-being drivers",
+      "detail": "Consider healthcare, education, trust, and work-life balance alongside economic measures."
+    }
+  ],
+  "nextSteps": [
+    "Add variables like inequality, governance quality, and freedom of choice.",
+    "Test non-linear or multivariate models to capture more complex relationships.",
+    "Refine clustering with more features to improve segmentation."
+  ],
+  "limitations": [
+    "Happiness scores are self-reported and may include cultural bias.",
+    "Some countries/years have missing data which can affect comparisons.",
+    "Findings show associations, not causation."
+  ],
+  "cta": {
+    "label": "Explore the Tableau Dashboard",
+    "href": "https://public.tableau.com/app/profile/nimrat.kaur2103/viz/WorldHappinessReport_17670313651560/WorldHappinessReport?publish=yes"
+  }
+}
+

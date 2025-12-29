@@ -288,6 +288,29 @@
       margin-top: 12px;
     }
 
+    .deliverable-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      margin-top: 12px;
+      border-radius: var(--radius-lg);
+      background: rgba(212, 165, 116, 0.12);
+      border: 1px solid rgba(212, 165, 116, 0.25);
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .deliverable-link:hover {
+      background: rgba(212, 165, 116, 0.2);
+      border-color: rgba(212, 165, 116, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212, 165, 116, 0.25);
+    }
+
     .loading {
       text-align: center;
       padding: 40px;
@@ -357,6 +380,13 @@
       <div class="content-section">
         <h2>Tools Used</h2>
         <div class="tools-list" id="tools-list"></div>
+      </div>
+
+      <div class="content-section">
+        <h2>Repository</h2>
+        <a href="https://github.com/Nimrat1988/Python-Instacart-Customer-Behaviour" target="_blank" class="deliverable-link">
+          View on GitHub
+        </a>
       </div>
     </div>
   </div>
