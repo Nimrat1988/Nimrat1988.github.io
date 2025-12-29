@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Influenza Season Staffing Strategy – Nimrat Kaur</title>
+  <title>World Happiness Report Analysis – Nimrat Kaur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -140,27 +140,6 @@
       margin-bottom: 12px;
     }
 
-    .insights-list {
-      list-style: none;
-      margin-top: 12px;
-    }
-
-    .insights-list li {
-      padding: 12px 16px;
-      margin-bottom: 10px;
-      border-radius: 12px;
-      background: rgba(10, 14, 32, 0.6);
-      border-left: 3px solid var(--accent);
-      font-size: 14px;
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    .insights-list li::before {
-      content: "💡";
-      margin-right: 10px;
-    }
-
     .questions-list {
       list-style: none;
       margin-top: 12px;
@@ -182,6 +161,92 @@
       margin-right: 10px;
     }
 
+    .methodology-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .methodology-list li {
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      background: rgba(10, 14, 32, 0.6);
+      border-left: 3px solid var(--accent);
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .methodology-list li strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .highlights-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .highlights-list li {
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: rgba(10, 14, 32, 0.6);
+      border-left: 3px solid var(--accent);
+    }
+
+    .highlights-list li h4 {
+      font-size: 15px;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .highlights-list li p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .highlights-list li .so-what {
+      font-size: 13px;
+      color: var(--accent);
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    .clusters-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .clusters-list li {
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: rgba(10, 14, 32, 0.6);
+      border-left: 3px solid var(--accent);
+    }
+
+    .clusters-list li h4 {
+      font-size: 15px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .clusters-list li p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .clusters-list li .so-what {
+      font-size: 13px;
+      color: var(--accent);
+      font-style: italic;
+      margin-top: 6px;
+    }
+
     .recommendations-list {
       list-style: none;
       margin-top: 12px;
@@ -198,19 +263,20 @@
       line-height: 1.6;
     }
 
-    .recommendations-list li::before {
-      content: "✓";
-      margin-right: 10px;
+    .recommendations-list li strong {
       color: var(--accent);
-      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
     }
 
-    .method-list {
+    .next-steps-list,
+    .limitations-list {
       list-style: none;
       margin-top: 12px;
     }
 
-    .method-list li {
+    .next-steps-list li,
+    .limitations-list li {
       padding: 12px 16px;
       margin-bottom: 10px;
       border-radius: 12px;
@@ -221,33 +287,17 @@
       line-height: 1.6;
     }
 
-    .method-list li::before {
+    .next-steps-list li::before {
       content: "→";
       margin-right: 10px;
       color: var(--accent);
       font-weight: 600;
     }
 
-    .data-sources-list {
-      list-style: none;
-      margin-top: 12px;
-    }
-
-    .data-sources-list li {
-      padding: 12px 16px;
-      margin-bottom: 10px;
-      border-radius: 12px;
-      background: rgba(10, 14, 32, 0.6);
-      border-left: 3px solid var(--accent);
-      font-size: 14px;
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    .data-sources-list li strong {
+    .limitations-list li::before {
+      content: "⚠";
+      margin-right: 10px;
       color: var(--accent);
-      display: block;
-      margin-bottom: 4px;
     }
 
     .visualizations-grid {
@@ -395,17 +445,14 @@
     <div id="content" style="display: none;">
       <div class="project-header">
         <h1 id="project-title"></h1>
-        <p class="project-subtitle" id="project-subtitle"></p>
+        <p class="project-subtitle" id="project-tagline"></p>
       </div>
 
       <div class="content-section">
         <h2>Overview</h2>
-        <p id="project-overview"></p>
-      </div>
-
-      <div class="content-section">
-        <h2>Objective</h2>
-        <p id="project-objective"></p>
+        <p id="overview-what"></p>
+        <p id="overview-why"></p>
+        <div class="so-what" id="overview-soWhat"></div>
       </div>
 
       <div class="content-section">
@@ -414,18 +461,18 @@
       </div>
 
       <div class="content-section">
-        <h2>Data Sources</h2>
-        <ul class="data-sources-list" id="data-sources-list"></ul>
+        <h2>Methodology</h2>
+        <ul class="methodology-list" id="methodology-list"></ul>
       </div>
 
       <div class="content-section">
-        <h2>Method</h2>
-        <ul class="method-list" id="method-list"></ul>
+        <h2>Key Highlights</h2>
+        <ul class="highlights-list" id="highlights-list"></ul>
       </div>
 
       <div class="content-section">
-        <h2>Key Insights</h2>
-        <ul class="insights-list" id="insights-list"></ul>
+        <h2>Country Clusters</h2>
+        <ul class="clusters-list" id="clusters-list"></ul>
       </div>
 
       <div class="content-section">
@@ -439,16 +486,13 @@
       </div>
 
       <div class="content-section">
-        <h2>Deliverable</h2>
-        <p id="deliverable-type"></p>
-        <a id="deliverable-link" href="#" target="_blank" class="deliverable-link" style="display: none;">
-          <span id="deliverable-label"></span>
-        </a>
+        <h2>Next Steps</h2>
+        <ul class="next-steps-list" id="next-steps-list"></ul>
       </div>
 
       <div class="content-section">
-        <h2>Impact</h2>
-        <div class="so-what" id="so-what"></div>
+        <h2>Limitations</h2>
+        <ul class="limitations-list" id="limitations-list"></ul>
       </div>
 
       <div class="content-section">
@@ -458,8 +502,15 @@
 
       <div class="content-section">
         <h2>Repository</h2>
-        <a href="https://github.com/Nimrat1988/Demand-Forecasting-Workplace-Planning" target="_blank" class="deliverable-link">
+        <a href="https://github.com/Nimrat1988/World-Happiness-Report" target="_blank" class="deliverable-link">
           View on GitHub
+        </a>
+      </div>
+
+      <div class="content-section">
+        <h2>Explore the Dashboard</h2>
+        <a id="cta-link" href="#" target="_blank" class="deliverable-link" style="display: none;">
+          <span id="cta-label"></span>
         </a>
       </div>
     </div>
@@ -468,124 +519,142 @@
   <script>
     async function loadProjectData() {
       try {
-        const response = await fetch('influenza_data.json');
+        const response = await fetch('happiness.json');
         if (!response.ok) {
           throw new Error('Failed to load project data');
         }
         const data = await response.json();
-        const project = data.project;
 
         // Hide loading, show content
         document.getElementById('loading').style.display = 'none';
         document.getElementById('content').style.display = 'block';
 
         // Populate header
-        document.getElementById('project-title').textContent = project.title;
-        document.getElementById('project-subtitle').textContent = project.subtitle;
+        document.getElementById('project-title').textContent = data.title;
+        document.getElementById('project-tagline').textContent = data.tagline;
 
         // Populate overview
-        if (project.problem) {
-          const overviewText = `${project.problem.what} ${project.problem.why} ${project.problem.solution}`;
-          document.getElementById('project-overview').textContent = overviewText;
-        } else if (project.overview) {
-          document.getElementById('project-overview').textContent = project.overview;
-        }
-
-        // Populate objective
-        if (project.objective) {
-          document.getElementById('project-objective').textContent = project.objective;
+        if (data.overview) {
+          document.getElementById('overview-what').textContent = data.overview.what;
+          document.getElementById('overview-why').textContent = data.overview.why;
+          document.getElementById('overview-soWhat').textContent = data.overview.soWhat;
         }
 
         // Populate key questions
-        if (project.keyQuestions) {
+        if (data.keyQuestions) {
           const questionsList = document.getElementById('questions-list');
-          project.keyQuestions.forEach(question => {
+          data.keyQuestions.forEach(question => {
             const li = document.createElement('li');
             li.textContent = question;
             questionsList.appendChild(li);
           });
         }
 
-        // Populate data sources
-        if (project.dataSources) {
-          const dataSourcesList = document.getElementById('data-sources-list');
-          project.dataSources.forEach(source => {
+        // Populate methodology
+        if (data.methodology) {
+          const methodologyList = document.getElementById('methodology-list');
+          data.methodology.forEach(method => {
             const li = document.createElement('li');
-            li.innerHTML = `<strong>${source.name}</strong>${source.description}`;
-            dataSourcesList.appendChild(li);
+            li.innerHTML = `<strong>${method.step}</strong>${method.summary}`;
+            methodologyList.appendChild(li);
           });
         }
 
-        // Populate method
-        if (project.method) {
-          const methodList = document.getElementById('method-list');
-          project.method.forEach(step => {
+        // Populate highlights
+        if (data.highlights) {
+          const highlightsList = document.getElementById('highlights-list');
+          data.highlights.forEach(highlight => {
             const li = document.createElement('li');
-            li.textContent = step;
-            methodList.appendChild(li);
+            li.innerHTML = `
+              <h4>${highlight.title}</h4>
+              <p>${highlight.detail}</p>
+              <div class="so-what">${highlight.soWhat}</div>
+            `;
+            highlightsList.appendChild(li);
           });
         }
 
-        // Populate insights
-        const insightsList = document.getElementById('insights-list');
-        project.keyInsights.forEach(insight => {
-          const li = document.createElement('li');
-          li.textContent = insight;
-          insightsList.appendChild(li);
-        });
+        // Populate clusters
+        if (data.clusters) {
+          const clustersList = document.getElementById('clusters-list');
+          data.clusters.forEach(cluster => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <h4>${cluster.name}</h4>
+              <p>${cluster.profile}</p>
+              <div class="so-what">${cluster.soWhat}</div>
+            `;
+            clustersList.appendChild(li);
+          });
+        }
 
         // Populate visualizations
-        const vizGrid = document.getElementById('visualizations-grid');
-        project.visualizations.forEach(viz => {
-          const card = document.createElement('div');
-          card.className = 'viz-card';
-          const insightHTML = viz.insight ? `<div class="viz-insight">${viz.insight}</div>` : '';
-          const description = viz.subtitle || viz.description || '';
-          card.innerHTML = `
-            <img src="${viz.image}" alt="${viz.title}" loading="lazy" />
-            <div class="viz-card-content">
-              <h3>${viz.title}</h3>
-              <p>${description}</p>
-              ${insightHTML}
-            </div>
-          `;
-          vizGrid.appendChild(card);
-        });
+        if (data.visualizations && data.visualizations.items) {
+          const vizGrid = document.getElementById('visualizations-grid');
+          data.visualizations.items.forEach(viz => {
+            const card = document.createElement('div');
+            card.className = 'viz-card';
+            const insightHTML = viz.soWhat ? `<div class="viz-insight">${viz.soWhat}</div>` : '';
+            card.innerHTML = `
+              <img src="${viz.image.src}" alt="${viz.image.alt}" loading="lazy" />
+              <div class="viz-card-content">
+                <h3>${viz.title}</h3>
+                <p>${viz.subtitle}</p>
+                ${insightHTML}
+              </div>
+            `;
+            vizGrid.appendChild(card);
+          });
+        }
 
         // Populate recommendations
-        if (project.recommendations) {
+        if (data.recommendations) {
           const recommendationsList = document.getElementById('recommendations-list');
-          project.recommendations.forEach(recommendation => {
+          data.recommendations.forEach(rec => {
             const li = document.createElement('li');
-            li.textContent = recommendation;
+            li.innerHTML = `<strong>${rec.title}</strong>${rec.detail}`;
             recommendationsList.appendChild(li);
           });
         }
 
-        // Populate deliverable
-        if (project.deliverable) {
-          document.getElementById('deliverable-type').textContent = project.deliverable.type;
-          if (project.deliverable.url && project.deliverable.label) {
-            const link = document.getElementById('deliverable-link');
-            link.href = project.deliverable.url;
-            document.getElementById('deliverable-label').textContent = project.deliverable.label;
-            link.style.display = 'inline-flex';
-          }
+        // Populate next steps
+        if (data.nextSteps) {
+          const nextStepsList = document.getElementById('next-steps-list');
+          data.nextSteps.forEach(step => {
+            const li = document.createElement('li');
+            li.textContent = step;
+            nextStepsList.appendChild(li);
+          });
         }
 
-        // Populate soWhat/Impact
-        if (project.soWhat) {
-          document.getElementById('so-what').textContent = project.soWhat;
+        // Populate limitations
+        if (data.limitations) {
+          const limitationsList = document.getElementById('limitations-list');
+          data.limitations.forEach(limitation => {
+            const li = document.createElement('li');
+            li.textContent = limitation;
+            limitationsList.appendChild(li);
+          });
         }
 
         // Populate tools
-        const toolsList = document.getElementById('tools-list');
-        project.tools.forEach(tool => {
-          const tag = document.createElement('span');
-          tag.className = 'tool-tag';
-          tag.textContent = tool;
-          toolsList.appendChild(tag);
-        });
+        if (data.tools) {
+          const toolsList = document.getElementById('tools-list');
+          data.tools.forEach(tool => {
+            const tag = document.createElement('span');
+            tag.className = 'tool-tag';
+            tag.textContent = tool;
+            toolsList.appendChild(tag);
+          });
+        }
+
+        // Populate CTA
+        if (data.cta) {
+          const link = document.getElementById('cta-link');
+          link.href = data.cta.href;
+          document.getElementById('cta-label').textContent = data.cta.label;
+          link.style.display = 'inline-flex';
+        }
 
       } catch (error) {
         document.getElementById('loading').style.display = 'none';
