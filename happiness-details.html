@@ -449,55 +449,38 @@
       </div>
 
       <div class="content-section">
-        <h2>Overview</h2>
-        <p id="overview-what"></p>
-        <p id="overview-why"></p>
+        <h2>Business Problem</h2>
+        <p id="business-problem-what"></p>
+        <p id="business-problem-why"></p>
+      </div>
+
+      <div class="content-section">
+        <h2>The Solution / Recommendation</h2>
         <div class="so-what" id="overview-soWhat"></div>
+        <ul class="recommendations-list" id="recommendations-list"></ul>
       </div>
 
       <div class="content-section">
-        <h2>Key Questions</h2>
+        <h2>The Process (SQL/Tech)</h2>
+        <h3 style="font-size: 16px; margin-top: 0; margin-bottom: 12px; color: var(--text-main);">Key Questions</h3>
         <ul class="questions-list" id="questions-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Methodology</h2>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Methodology</h3>
         <ul class="methodology-list" id="methodology-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Key Highlights</h2>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Key Highlights</h3>
         <ul class="highlights-list" id="highlights-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Country Clusters</h2>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Country Clusters</h3>
         <ul class="clusters-list" id="clusters-list"></ul>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Tools Used</h3>
+        <div class="tools-list" id="tools-list"></div>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Next Steps</h3>
+        <ul class="next-steps-list" id="next-steps-list"></ul>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Limitations</h3>
+        <ul class="limitations-list" id="limitations-list"></ul>
       </div>
 
       <div class="content-section">
         <h2>Visualizations</h2>
         <div class="visualizations-grid" id="visualizations-grid"></div>
-      </div>
-
-      <div class="content-section">
-        <h2>Recommendations</h2>
-        <ul class="recommendations-list" id="recommendations-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Next Steps</h2>
-        <ul class="next-steps-list" id="next-steps-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Limitations</h2>
-        <ul class="limitations-list" id="limitations-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Tools Used</h2>
-        <div class="tools-list" id="tools-list"></div>
       </div>
 
       <div class="content-section">
@@ -533,10 +516,10 @@
         document.getElementById('project-title').textContent = data.title;
         document.getElementById('project-tagline').textContent = data.tagline;
 
-        // Populate overview
+        // Populate Business Problem
         if (data.overview) {
-          document.getElementById('overview-what').textContent = data.overview.what;
-          document.getElementById('overview-why').textContent = data.overview.why;
+          document.getElementById('business-problem-what').textContent = data.overview.what;
+          document.getElementById('business-problem-why').textContent = data.overview.why;
           document.getElementById('overview-soWhat').textContent = data.overview.soWhat;
         }
 
@@ -607,7 +590,7 @@
           });
         }
 
-        // Populate recommendations
+        // Populate recommendations (in Solution/Recommendation section)
         if (data.recommendations) {
           const recommendationsList = document.getElementById('recommendations-list');
           data.recommendations.forEach(rec => {
@@ -617,7 +600,7 @@
           });
         }
 
-        // Populate next steps
+        // Populate next steps (in Process section)
         if (data.nextSteps) {
           const nextStepsList = document.getElementById('next-steps-list');
           data.nextSteps.forEach(step => {
@@ -627,7 +610,7 @@
           });
         }
 
-        // Populate limitations
+        // Populate limitations (in Process section)
         if (data.limitations) {
           const limitationsList = document.getElementById('limitations-list');
           data.limitations.forEach(limitation => {

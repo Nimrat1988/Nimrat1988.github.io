@@ -399,47 +399,32 @@
       </div>
 
       <div class="content-section">
-        <h2>Overview</h2>
-        <p id="project-overview"></p>
+        <h2>Business Problem</h2>
+        <p id="business-problem-what"></p>
+        <p id="business-problem-why"></p>
       </div>
 
       <div class="content-section">
-        <h2>Objective</h2>
-        <p id="project-objective"></p>
-      </div>
-
-      <div class="content-section">
-        <h2>Key Questions</h2>
-        <ul class="questions-list" id="questions-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Data Sources</h2>
-        <ul class="data-sources-list" id="data-sources-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Method</h2>
-        <ul class="method-list" id="method-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Key Insights</h2>
-        <ul class="insights-list" id="insights-list"></ul>
-      </div>
-
-      <div class="content-section">
-        <h2>Visualizations</h2>
-        <div class="visualizations-grid" id="visualizations-grid"></div>
-      </div>
-
-      <div class="content-section">
-        <h2>Recommendations</h2>
+        <h2>The Solution / Recommendation</h2>
+        <div class="so-what" id="so-what"></div>
         <ul class="recommendations-list" id="recommendations-list"></ul>
       </div>
 
       <div class="content-section">
-        <h2>Deliverable</h2>
+        <h2>The Process (SQL/Tech)</h2>
+        <p id="process-solution"></p>
+        <p id="project-objective" style="margin-top: 12px;"></p>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Key Questions</h3>
+        <ul class="questions-list" id="questions-list"></ul>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Data Sources</h3>
+        <ul class="data-sources-list" id="data-sources-list"></ul>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Method</h3>
+        <ul class="method-list" id="method-list"></ul>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Key Insights</h3>
+        <ul class="insights-list" id="insights-list"></ul>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Tools Used</h3>
+        <div class="tools-list" id="tools-list"></div>
+        <h3 style="font-size: 16px; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">Deliverable</h3>
         <p id="deliverable-type"></p>
         <a id="deliverable-link" href="#" target="_blank" class="deliverable-link" style="display: none;">
           <span id="deliverable-label"></span>
@@ -447,13 +432,8 @@
       </div>
 
       <div class="content-section">
-        <h2>Impact</h2>
-        <div class="so-what" id="so-what"></div>
-      </div>
-
-      <div class="content-section">
-        <h2>Tools Used</h2>
-        <div class="tools-list" id="tools-list"></div>
+        <h2>Visualizations</h2>
+        <div class="visualizations-grid" id="visualizations-grid"></div>
       </div>
 
       <div class="content-section">
@@ -483,12 +463,11 @@
         document.getElementById('project-title').textContent = project.title;
         document.getElementById('project-subtitle').textContent = project.subtitle;
 
-        // Populate overview
+        // Populate Business Problem
         if (project.problem) {
-          const overviewText = `${project.problem.what} ${project.problem.why} ${project.problem.solution}`;
-          document.getElementById('project-overview').textContent = overviewText;
-        } else if (project.overview) {
-          document.getElementById('project-overview').textContent = project.overview;
+          document.getElementById('business-problem-what').textContent = project.problem.what;
+          document.getElementById('business-problem-why').textContent = project.problem.why;
+          document.getElementById('process-solution').textContent = project.problem.solution;
         }
 
         // Populate objective
@@ -552,6 +531,11 @@
           vizGrid.appendChild(card);
         });
 
+        // Populate soWhat/Impact (Solution/Recommendation section)
+        if (project.soWhat) {
+          document.getElementById('so-what').textContent = project.soWhat;
+        }
+
         // Populate recommendations
         if (project.recommendations) {
           const recommendationsList = document.getElementById('recommendations-list');
@@ -571,11 +555,6 @@
             document.getElementById('deliverable-label').textContent = project.deliverable.label;
             link.style.display = 'inline-flex';
           }
-        }
-
-        // Populate soWhat/Impact
-        if (project.soWhat) {
-          document.getElementById('so-what').textContent = project.soWhat;
         }
 
         // Populate tools
